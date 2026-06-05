@@ -1,0 +1,194 @@
+:root {
+        --bg-color: #f8f9fa;
+        --card-bg: #ffffff;
+        --primary-light: #f4f3ff;
+        --primary-btn: #715df2;
+        --primary-btn-hover: #5b46d9;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --text-light: #9ca3af;
+        --badge-bg: #fde047;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-main);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 40px 20px;
+    }
+
+    .pricing-container {
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .header-section {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .header-subtitle {
+        color: var(--primary-btn);
+        font-weight: 700;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        text-transform: capitalize;
+    }
+
+    .header-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--text-main);
+    }
+
+    .cards-wrapper {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: stretch;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        background-color: var(--card-bg);
+        border-radius: 20px;
+        padding: 20px;
+        width: 100%;
+        max-width: 360px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-top {
+        background-color: var(--primary-light);
+        border-radius: 16px;
+        padding: 30px 20px;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        /* Let the content dictate the height uniformly */
+    }
+
+    .badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--badge-bg);
+        color: #854d0e;
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 20px;
+    }
+
+    .plan-name {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .plan-desc {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 30px;
+        /* Uniform minimum height ensures all prices align horizontally */
+        min-height: 85px; 
+    }
+
+    .plan-price {
+        font-size: 1.8rem;
+        font-weight: 800;
+        margin-bottom: 5px;
+    }
+
+    .plan-billing {
+        font-size: 0.8rem;
+        color: var(--text-light);
+        margin-bottom: 25px;
+    }
+
+    .btn {
+        background-color: var(--primary-btn);
+        color: white;
+        border: none;
+        padding: 14px;
+        border-radius: 25px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.2s;
+    }
+
+    .btn:hover {
+        background-color: var(--primary-btn-hover);
+    }
+
+    .card-bottom {
+        padding: 30px 10px 10px 10px;
+        flex-grow: 1; /* Pushes the white background to fill the rest of the card */
+    }
+
+    .features-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: #4b5563;
+        margin-bottom: 20px;
+    }
+
+    .features-list {
+        list-style: none;
+    }
+
+    .features-list li {
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 16px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.4;
+    }
+
+    .icon-circle::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid var(--text-light);
+        border-radius: 50%;
+    }
+
+    .icon-check::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 18px;
+        height: 18px;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 11.08V12a10 10 0 1 1-5.93-9.14'/%3E%3Cpolyline points='22 4 12 14.01 9 11.01'/%3E%3C/svg%3E");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    @media (max-width: 1024px) {
+        .cards-wrapper {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
